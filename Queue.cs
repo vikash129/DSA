@@ -81,3 +81,97 @@ return false ;
 }
 };
 
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+Queue queue = new Queue();
+
+
+    while (true)
+    {
+            Console.WriteLine("Enter '1' to Enqueue:");
+            Console.WriteLine("Enter '2' to Dequeue:");
+            Console.WriteLine("Enter '3' to Peek:");
+            Console.WriteLine("Enter '4' to check if element contains :"); 
+            Console.WriteLine("Enter '5' Size:");
+            Console.WriteLine("Enter '6' Reverse:");
+            Console.WriteLine("Enter '7' Center");
+            Console.WriteLine("Enter '8' Iterator");
+            Console.WriteLine("Enter '9' Print Queue ");
+
+            char command = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            switch (command)
+            {
+                case '1':
+                    Console.WriteLine("Enter value to enqueue :");
+                    int valueToInsert = int.Parse(Console.ReadLine());
+                    queue.Enqueue(valueToInsert);
+                    Console.WriteLine("Enqueued {0}.", valueToInsert);
+                    queue.Print();
+                    break;
+                case '2':                                        
+                    int remove = queue.Dequeue() ; 
+                        if(remove==-1){
+                        Console.WriteLine("queue is empty");
+                         }
+                        else{
+                         Console.WriteLine("Dequeued : {0} .", remove);
+                        queue.Print();
+                
+                        }
+                    break;
+                case '3':
+                    Console.WriteLine("{0} peek is .", queue.Peek());
+                    break;
+                case '4':
+                Console.WriteLine("Enter element  : ");
+                    int target =  int.Parse(Console.ReadLine());
+
+                    if(queue.Contains(target)){
+                Console.WriteLine("Element is present");
+
+                    }
+                    else{
+                Console.WriteLine("Element is not present");
+
+                    }
+                    break;
+
+                case '5':
+
+                    Console.WriteLine("Size is {0}", queue.Size()) ;
+                    break;
+                case '6':
+                    Console.WriteLine("Reverse of queue is ") ;
+                    queue.Reverse();
+                    queue.Print();
+                    break;
+                case '7':
+                    Console.WriteLine("Center is {0}", queue.Center()) ;
+                     break;
+                case '8':
+                    Console.WriteLine("After Sorteing : ") ;
+                    queue.Sort();
+                    queue.Print();
+                    break;
+
+                case '9':
+                Console.WriteLine("queue is : ") ;
+                    queue.Print();
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid command.");
+                    break;
+            }
+        }
+    
+    }
+}
+
+
