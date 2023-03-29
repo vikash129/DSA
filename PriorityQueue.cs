@@ -1,22 +1,24 @@
 using System ;
 
-class PriorityQueue
-{
-  private  int top = -1 ;
-  private  int front = -1 ;
+public class item {
+    public int value;
+    public int priority;
+};
 
-   private int[] arr  = new int[100];
+public class PriorityQueue
+{
+
+  private int[] pq  = new int[1000];
+  private int size=  -1  ; 
 
    public void Enqueue(int value){
 
-    if(top==-1){
-        front = 0 ;
-        top = 0 ;
-    }
-    else{
-            this.top = this.top + 1 ;
-    }
-    arr[this.top] = value;
+        size++;
+     
+        // Insert the element
+        pq[size] = new item();
+        pq[size].value = value;
+        pq[size].priority = priority;
 }
 
    public int Dequeue(){
@@ -79,6 +81,9 @@ return false ;
     Console.WriteLine();
 }
 };
+
+
+
 
 
 
